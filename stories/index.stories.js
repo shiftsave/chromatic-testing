@@ -1,12 +1,33 @@
 import React from 'react';
-
+import { ThemeProvider } from 'styled-components'
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 // Imports
 import { Button } from '../src';
 
+// Initialize the theme
+const Theme = (storyFn) => (
+  <ThemeProvider theme={{ mode: 'light' }}>
+    { storyFn() }
+  </ThemeProvider>
+);
+
 // Stories
 storiesOf('Button', module)
-    .add('default', () => <Button onClick={action('clicked')}>Button</Button>)
-    .add('primary', () => <Button onClick={action('clicked')}>Button</Button>);
+    .addDecorator(Theme)
+    .add('default', () => (
+        <Button onClick={action('clicked')}>
+            Button
+        </Button>
+    ))
+    .add('success', () => (
+        <Button buttonType="success" onClick={action('clicked')}>
+            Button
+        </Button>
+    ))
+    .add('primary', () => (
+        <Button buttonType="danger" onClick={action('clicked')}>
+            Button
+        </Button>
+    ));

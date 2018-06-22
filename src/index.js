@@ -1,2 +1,2 @@
 /* Button */
-export { Button } from "./elements/Button";
+export { Button } from './elements/Button/Button';

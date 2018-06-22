@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 // Imports
-import { Button } from "../src";
+import { Button } from '../src';
 
 // Stories
-storiesOf("Button", module).add("with text", () => (
-  <Button onClick={action("clicked")}>Hello Button</Button>
-));
+storiesOf('Button', module)
+    .add('default', () => <Button onClick={action('clicked')}>Button</Button>)
+    .add('primary', () => <Button onClick={action('clicked')}>Button</Button>);

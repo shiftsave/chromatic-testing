@@ -14,7 +14,7 @@ const style = theme.variants('mode', 'buttonType', {
 export const Button = styled.button`
     background: ${props => props.buttonType === 'primary' && color.BLUE_BASE};
     border: 1px solid ${style};
-    border-radius: 2px;
+    border-radius: 99px;
     color: ${style};
     color: ${props => props.buttonType === 'primary' && 'white'};
     height: 24px;
